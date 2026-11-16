@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Métodos de pago · De la idea a la realidad</title>
+<meta name="description" content="Elige tu boleto y tu método de pago para De la idea a la realidad.">
+<meta property="og:title" content="Métodos de pago · De la idea a la realidad">
+<meta property="og:description" content="Elige tu boleto y tu método de pago para De la idea a la realidad.">
+<meta property="og:image" content="assets/logo-principal-hd.png">
+<link rel="icon" href="assets/sello-hex-azul.png">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=AR+One+Sans:wght@400;500;600;700&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F2ECDF}
+a{color:#30364F}a:hover{color:#952A24}
+button{font:inherit;cursor:pointer}
+.fondo-papel{background-image:linear-gradient(rgba(242,236,223,0.55), rgba(242,236,223,0.55)), url(assets/papel.png);background-size:100% 100%, 512px 512px}
+.papel-ticket{background-image:linear-gradient(rgba(251,248,241,0.8), rgba(251,248,241,0.8)), url(assets/papel.png);background-size:100% 100%, 512px 512px}
+.papel-nota{border:1px solid rgba(48,54,79,0.12)}
+.papel-ticket-azul{background-image:url(assets/papel.png);background-size:512px 512px;background-blend-mode:multiply}
+</style>
+
+</head>
+<body>
+
+
+<div class="fondo-papel" style="font-family: 'AR One Sans', system-ui, sans-serif; color: #1E1E1E; background-color: #F2ECDF; min-height: 100vh; overflow: hidden">
+
+  <!-- BARRA -->
+  <header style="max-width: 1080px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+    <a href="index.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #30364F; text-decoration: none; font-size: 14px; font-weight: 600">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="#30364F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      Volver a la página del programa
+    </a>
+    <img src="assets/sello-oval.png" alt="De la idea a la realidad" style="width: 110px; height: auto">
+  </header>
+
+  <!-- TÍTULO -->
+  <section style="max-width: 760px; margin: 0 auto; padding: 32px 24px 48px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 18px">
+    <div style="font-size: 12px; letter-spacing: 0.22em; font-weight: 600; color: #952A24">CHECK-IN</div>
+    <h1 style="margin: 0; font-family: 'Lora', Georgia, serif; font-weight: 400; font-size: clamp(36px, 4.4vw, 54px); line-height: 1.1; color: #30364F">Estás a tres pasos de abordar.</h1>
+    <p style="margin: 0; font-size: 18px; line-height: 1.6; max-width: 560px; text-align: justify; text-align-last: center; hyphens: auto">Elige tu boleto, paga con el método que te quede más cómodo y envíame tu comprobante por WhatsApp.</p>
+  </section>
+
+  <main style="max-width: 880px; margin: 0 auto; padding: 0 24px 104px; display: flex; flex-direction: column; gap: 28px">
+
+    <!-- PASO 1 -->
+    <section class="papel-ticket" style="position: relative; background-color: #FBF8F1; border-radius: 18px; padding: 36px 36px 34px; box-shadow: 0 2px 4px rgba(48,54,79,0.06), 0 16px 34px rgba(48,54,79,0.10); display: flex; flex-direction: column; gap: 20px">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+        <span style="font-family: 'Lora', serif; font-size: 40px; line-height: 1; color: #952A24; font-weight: 400">01</span>
+        <h2 style="margin: 0; font-family: 'Lora', serif; font-weight: 400; font-size: 28px; color: #30364F">Elige tu boleto</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+        <div id="boletos" style="display: contents"></div>
+      </div>
+    </section>
+
+    <!-- PASO 2 -->
+    <section class="papel-ticket" style="position: relative; background-color: #FBF8F1; border-radius: 18px; padding: 36px 36px 34px; box-shadow: 0 2px 4px rgba(48,54,79,0.06), 0 16px 34px rgba(48,54,79,0.10); display: flex; flex-direction: column; gap: 20px">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+        <span style="font-family: 'Lora', serif; font-size: 40px; line-height: 1; color: #952A24; font-weight: 400">02</span>
+        <h2 style="margin: 0; font-family: 'Lora', serif; font-weight: 400; font-size: 28px; color: #30364F">Elige cómo quieres pagar</h2>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <div id="metodos" style="display: contents"></div>
+      </div>
+
+      <div id="sinMetodo">
+        <p style="margin: 0; padding: 22px 24px; border: 1.5px dashed #ACBAC4; border-radius: 14px; font-size: 16px; line-height: 1.5; color: #5C5549; text-align: justify; text-align-last: center; hyphens: auto">Toca un método para ver sus datos de pago.</p>
+      </div>
+
+      <div id="conMetodo" hidden></div>
+    </section>
+
+    <!-- PASO 3 -->
+    <section class="papel-ticket" style="position: relative; background-color: #FBF8F1; border-radius: 18px; padding: 36px 36px 34px; box-shadow: 0 2px 4px rgba(48,54,79,0.06), 0 16px 34px rgba(48,54,79,0.10); display: flex; flex-direction: column; gap: 20px">
+      <div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+        <span style="font-family: 'Lora', serif; font-size: 40px; line-height: 1; color: #952A24; font-weight: 400">03</span>
+        <h2 style="margin: 0; font-family: 'Lora', serif; font-weight: 400; font-size: 28px; color: #30364F">Envíame tu comprobante</h2>
+      </div>
+      <!-- Boleto de abordaje -->
+      <div class="papel-ticket-azul" style="position: relative; display: flex; flex-wrap: wrap; background-color: #30364F; color: #F2ECDF; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 30px rgba(48,54,79,0.25); margin: 4px 0 8px">
+        <div style="flex: 999 1 380px; min-width: 0; padding: 30px 32px; display: flex; flex-direction: column; gap: 16px">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap">
+            <span style="font-size: 12px; letter-spacing: 0.22em; font-weight: 600; color: #ACBAC4">BOLETO DE ABORDAJE</span>
+            <img src="assets/wordmark-crema.png" alt="El Refugio" style="height: 22px; width: auto">
+          </div>
+          <p style="margin: 0; font-family: 'Lora', serif; font-size: clamp(26px, 3vw, 34px); line-height: 1.2; font-weight: 400">Acabas de elegirte.</p>
+          <p style="margin: 0; max-width: 440px; font-size: 16px; line-height: 1.6; color: #DCD4C4; text-align: justify; hyphens: auto">Decidiste dejar de esperar el momento perfecto. Este boleto es tu compromiso contigo: tu idea ya tiene fecha de salida.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 12px 28px; padding-top: 14px; border-top: 1px dashed rgba(242,236,223,0.35)">
+            <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; letter-spacing: 0.18em; font-weight: 600; color: #ACBAC4">PASAJERO</span><span style="font-family: 'AR One Sans', system-ui, sans-serif; font-size: 18px">tú</span></div>
+            <div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; letter-spacing: 0.18em; font-weight: 600; color: #ACBAC4">SALIDA</span><span style="font-size: 16px; font-weight: 600">1 DIC · 11:00 AM</span></div>
+            <div style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 11px; letter-spacing: 0.18em; font-weight: 600; color: #ACBAC4">BOLETO</span><span style="font-size: 16px; font-weight: 600"><span id="boletoTicket">Programa</span></span></div>
+          </div>
+          <div style="font-size: 12px; letter-spacing: 0.16em; font-weight: 600; color: #ACBAC4">DESTINO: CONSTRUIR TUS SUEÑOS PASO A PASO&nbsp;</div>
+        </div>
+        <div style="position: relative; flex: 1 1 200px; padding: 30px 24px; border-left: 2px dashed rgba(242,236,223,0.35); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
+          <span aria-hidden="true" style="position: absolute; top: -14px; left: -15px; width: 28px; height: 28px; border-radius: 50%; background: #FBF8F1"></span>
+          <span aria-hidden="true" style="position: absolute; bottom: -14px; left: -15px; width: 28px; height: 28px; border-radius: 50%; background: #FBF8F1"></span>
+          <img src="assets/sello-hex-crema.png" alt="" aria-hidden="true" style="width: 110px; height: auto; transform: rotate(-10deg); opacity: 0.95">
+          <span style="font-family: 'AR One Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.35">Nadie se arrepiente<br>de ser valiente.</span>
+          
+        </div>
+      </div>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; text-align: justify; hyphens: auto">Cuando hagas el pago, escríbeme por WhatsApp y envíame:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px">
+        <div class="papel-nota" style="background-color: #FFFFFF; border-radius: 12px; padding: 18px 20px; display: flex; gap: 12px; align-items: center; box-shadow: 0 4px 10px rgba(48,54,79,0.06)">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="flex: 0 0 auto"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#952A24" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size: 16px; line-height: 1.35">El comprobante de pago</span>
+        </div>
+        <div class="papel-nota" style="background-color: #FFFFFF; border-radius: 12px; padding: 18px 20px; display: flex; gap: 12px; align-items: center; box-shadow: 0 4px 10px rgba(48,54,79,0.06)">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="flex: 0 0 auto"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#952A24" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size: 16px; line-height: 1.35">Tu nombre completo</span>
+        </div>
+        <div class="papel-nota" style="background-color: #FFFFFF; border-radius: 12px; padding: 18px 20px; display: flex; gap: 12px; align-items: center; box-shadow: 0 4px 10px rgba(48,54,79,0.06)">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="flex: 0 0 auto"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#952A24" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size: 16px; line-height: 1.35">Tu ciudad</span>
+        </div>
+        <div class="papel-nota" style="background-color: #FFFFFF; border-radius: 12px; padding: 18px 20px; display: flex; gap: 12px; align-items: center; box-shadow: 0 4px 10px rgba(48,54,79,0.06)">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="flex: 0 0 auto"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="#952A24" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="font-size: 16px; line-height: 1.35">Tu correo electrónico</span>
+        </div>
+      </div>
+      <a id="whatsapp" href="https://wa.me/message/UX2ET3QZ3LNDO1" target="_blank" rel="noopener" style="align-self: center; display: inline-flex; align-items: center; gap: 10px; min-height: 56px; margin-top: 8px; padding: 0 34px; background: #30364F; color: #F2ECDF; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 17px">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5z" fill="none" stroke="#F2ECDF" stroke-width="1.8" stroke-linejoin="round"></path></svg>
+        Enviar mi comprobante por WhatsApp
+      </a>
+      <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #5C5549; text-align: justify; text-align-last: center; hyphens: auto">El botón abre mi WhatsApp. Envíame ahí tu comprobante con tu nombre completo, ciudad y correo.</p>
+    </section>
+
+    <p style="margin: 8px 0 0; font-size: 14px; letter-spacing: 0.04em; color: #5C5549; text-align: justify; text-align-last: center; hyphens: auto">En vivo · Del 1 al 12 de diciembre · Solo 15 cupos · Inscripciones hasta el 30 de noviembre · Pago único</p>
+  </main>
+
+</div>
+
+<script>
+(function () {
+  var acento = '#952A24';
+  var WHATSAPP_LINK = 'https://wa.me/message/UX2ET3QZ3LNDO1';
+  var WHATSAPP = '';
+  const boletosBase = [
+      { id: 'programa', etiqueta: 'PRECIO ESPECIAL EARLY ACCESS', nombre: 'De la idea a la realidad', precio: '$80', usd: 80 },
+      { id: 'refugio', etiqueta: 'PROGRAMA + 6 MESES', nombre: 'De la idea a la realidad + 6 meses en El Refugio', precio: '$220', usd: 220 }
+    ];
+  const metodosBase = [
+      { id: 'zelle', nombre: 'Zelle', datos: [
+        { label: 'CORREO', valor: 'mvbarrios05@gmail.com' },
+        { label: 'TITULAR', valor: 'María Nieto' },
+        { label: 'DESCRIPCIÓN', valor: 'Anateresa Barrios' }
+      ] },
+      { id: 'pagomovil', nombre: 'Pago móvil', nota: 'El monto en bolívares se calcula con la tasa promedio de @monitordolarvzla del día del pago.', datos: [
+        { label: 'BANCO', valor: 'Bancamiga' },
+        { label: 'TELÉFONO', valor: '0424 521 3309' },
+        { label: 'CÉDULA', valor: '26.120.647' }
+      ] },
+      { id: 'binance', nombre: 'Binance', datos: [
+        { label: 'CORREO', valor: 'oscarebarrios99@gmail.com' }
+      ] },
+      { id: 'zinli', nombre: 'Zinli', datos: [
+        { label: 'CORREO', valor: 'oscarebarrios99@gmail.com' }
+      ] },
+      { id: 'paypal', nombre: 'PayPal', recargo: 0.10, nota: 'Los pagos por PayPal tienen un 10% extra por la comisión de la plataforma.', datos: [
+        { label: 'CORREO', valor: 'hello@elrefugiocreativo.com' }
+      ] }
+    ];
+  var state = { boleto: 'programa', metodo: null };
+  function esc(v) { return String(v).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function render() {
+    var boletos = boletosBase.map(function (b) {
+      var on = state.boleto === b.id;
+      return Object.assign({}, b, {
+        pressed: on ? 'true' : 'false',
+        colorEtiqueta: on ? '#ACBAC4' : acento,
+        estilo: 'display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; padding: 24px 26px; border-radius: 14px; min-height: 44px; ' +
+          (on ? 'background: #30364F; color: #F2ECDF; border: 1.5px solid #30364F; box-shadow: 0 10px 22px rgba(48,54,79,0.22)' : 'background: #FFFFFF; color: #30364F; border: 1.5px solid #ACBAC4')
+      });
+    });
+    document.getElementById('boletos').innerHTML = boletos.map(function (b) { return `
+          <button type="button" data-boleto="${b.id}" aria-pressed="${b.pressed}" style="${b.estilo}">
+            <span style="font-size: 12px; letter-spacing: 0.18em; font-weight: 700; color: ${b.colorEtiqueta}">${b.etiqueta}</span>
+            <span style="font-family: 'AR One Sans', system-ui, sans-serif; font-size: 22px; line-height: 1.3">${b.nombre}</span>
+            <span style="font-family: 'Lora', serif; font-size: 40px; line-height: 1; font-weight: 400">${b.precio}</span>
+          </button>
+        `; }).join('');
+    var metodos = metodosBase.map(function (m) {
+      var on = state.metodo === m.id;
+      return Object.assign({}, m, {
+        pressed: on ? 'true' : 'false',
+        estilo: 'min-height: 52px; padding: 0 26px; border-radius: 999px; font-size: 16px; font-weight: 600; ' +
+          (on ? 'background: #30364F; color: #F2ECDF; border: 1.5px solid #30364F' : 'background: #FFFFFF; color: #30364F; border: 1.5px solid #30364F')
+      });
+    });
+    document.getElementById('metodos').innerHTML = metodos.map(function (m) { return `
+          <button type="button" data-metodo="${m.id}" aria-pressed="${m.pressed}" style="${m.estilo}">${m.nombre}</button>
+        `; }).join('');
+    var boletoSel = boletosBase.find(function (b) { return b.id === state.boleto; });
+    var m = metodosBase.find(function (x) { return x.id === state.metodo; });
+    var usdFinal = m && m.recargo ? Math.round(boletoSel.usd * (1 + m.recargo) * 100) / 100 : boletoSel.usd;
+    var montoTxt = '$' + String(usdFinal).replace('.', ',');
+    var monto = m && m.id === 'pagomovil' ? montoTxt + ' en Bs' : montoTxt;
+    document.getElementById('sinMetodo').hidden = !!m;
+    var panel = document.getElementById('conMetodo');
+    panel.hidden = !m;
+    if (m) {
+      var datos = m.datos.map(function (d) { return `
+              <div style="display: flex; flex-direction: column; gap: 4px">
+                <span style="font-size: 12px; letter-spacing: 0.18em; font-weight: 600; color: #ACBAC4">${esc(d.label)}</span>
+                <span style="font-size: 18px; line-height: 1.4; word-break: break-word">${esc(d.valor)}</span>
+              </div>
+            `; }).join('');
+      var nota = m.nota ? `
+            <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #ACBAC4; text-align: justify; hyphens: auto">${esc(m.nota)}</p>
+          ` : '';
+      panel.innerHTML = `
+        <div style="position: relative; background: #30364F; color: #F2ECDF; border-radius: 14px; padding: 28px 30px; display: flex; flex-direction: column; gap: 18px">
+          <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 10px; padding-bottom: 16px; border-bottom: 1px dashed rgba(242,236,223,0.35)">
+            <div style="font-family: 'Lora', serif; font-size: 30px; line-height: 1.1; font-weight: 400">${esc(m.nombre)}</div>
+            <div style="display: flex; align-items: baseline; gap: 10px">
+              <span style="font-size: 12px; letter-spacing: 0.18em; font-weight: 600; color: #ACBAC4">MONTO</span>
+              <span style="font-family: 'Lora', serif; font-size: 30px; line-height: 1; font-weight: 400">${monto}</span>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px 28px">
+            ${datos}
+          </div>
+          ${nota}
+        </div>
+      `;
+    }
+    document.getElementById('boletoTicket').textContent = boletoSel.id === 'refugio' ? 'Programa + 6 meses' : 'Programa';
+    var mensaje = '¡Hola, Ani! Ya hice mi pago para De la idea a la realidad.\n\n' +
+      'Boleto: ' + boletoSel.nombre + ' (' + boletoSel.precio + ')\n' +
+      'Monto pagado: ' + monto + '\n' +
+      'Método: ' + (m ? m.nombre : '') + '\n\n' +
+      'Nombre completo: \nCiudad: \nCorreo electrónico: \n\nTe adjunto el comprobante.';
+    document.getElementById('whatsapp').href = WHATSAPP ? 'https://wa.me/' + WHATSAPP.replace(/\D/g, '') + '?text=' + encodeURIComponent(mensaje) : WHATSAPP_LINK;
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-boleto]'); if (b) { state.boleto = b.getAttribute('data-boleto'); render(); return; }
+    var m = e.target.closest('[data-metodo]'); if (m) { state.metodo = m.getAttribute('data-metodo'); render(); }
+  });
+  render();
+})();
+</script>
+</body>
+</html>
