@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Métodos de pago · De la idea a la realidad</title>
-<meta name="description" content="Elige tu boleto y tu método de pago para De la idea a la realidad.">
-<meta property="og:title" content="Métodos de pago · De la idea a la realidad">
-<meta property="og:description" content="Elige tu boleto y tu método de pago para De la idea a la realidad.">
+<title>Métodos de pago · De la Idea a la Realidad</title>
+<meta name="description" content="Elige tu boleto y tu método de pago para De la Idea a la Realidad.">
+<meta property="og:title" content="Métodos de pago · De la Idea a la Realidad">
+<meta property="og:description" content="Elige tu boleto y tu método de pago para De la Idea a la Realidad.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://elrefugiocreativo.github.io/DLIALR/">
 <meta property="og:image" content="https://elrefugiocreativo.github.io/DLIALR/assets/og-dlialr.jpg">
@@ -41,7 +41,7 @@ button{font:inherit;cursor:pointer}
       <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="#30364F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       Volver a la página del programa
     </a>
-    <img src="assets/sello-oval.png" alt="De la idea a la realidad" style="width: 110px; height: auto">
+    <img src="assets/sello-oval.png" alt="De la Idea a la Realidad" style="width: 110px; height: auto">
   </header>
 
   <!-- TÍTULO -->
@@ -137,7 +137,7 @@ button{font:inherit;cursor:pointer}
       <p style="margin: 0; font-size: 14px; line-height: 1.5; color: #5C5549; text-align: justify; text-align-last: center; hyphens: auto">El botón abre mi WhatsApp. Envíame ahí tu comprobante con tu nombre completo, ciudad y correo.</p>
     </section>
 
-    <p style="margin: 8px 0 0; font-size: 14px; letter-spacing: 0.04em; color: #5C5549; text-align: justify; text-align-last: center; hyphens: auto">En vivo · Del 1 al 12 de diciembre · Solo 15 cupos · Inscripciones hasta el 30 de noviembre · Pago único</p>
+    <p style="margin: 8px 0 0; font-size: 14px; letter-spacing: 0.04em; color: #5C5549; text-align: justify; text-align-last: center; hyphens: auto">En directo · Del 1 al 12 de diciembre · Inscripciones hasta el 30 de noviembre · Pago único</p>
   </main>
 
 </div>
@@ -148,8 +148,8 @@ button{font:inherit;cursor:pointer}
   var WHATSAPP_LINK = 'https://wa.me/message/UX2ET3QZ3LNDO1';
   var WHATSAPP = '';
   const boletosBase = [
-      { id: 'programa', etiqueta: 'PRECIO ESPECIAL EARLY ACCESS', nombre: 'De la idea a la realidad', precio: '$80', usd: 80 },
-      { id: 'refugio', etiqueta: 'PROGRAMA + 6 MESES', nombre: 'De la idea a la realidad + 6 meses en El Refugio', precio: '$220', usd: 220 }
+      { id: 'programa', etiqueta: 'PROGRAMA', nombre: 'De la Idea a la Realidad', precio: '$80', usd: 80 },
+      { id: 'refugio', etiqueta: 'PROGRAMA + 6 MESES', nombre: 'De la Idea a la Realidad + 6 meses en El Refugio', precio: '$220', usd: 220 }
     ];
   const metodosBase = [
       { id: 'zelle', nombre: 'Zelle', datos: [
@@ -237,7 +237,7 @@ button{font:inherit;cursor:pointer}
       `;
     }
     document.getElementById('boletoTicket').textContent = boletoSel.id === 'refugio' ? 'Programa + 6 meses' : 'Programa';
-    var mensaje = '¡Hola, Ani! Ya hice mi pago para De la idea a la realidad.\n\n' +
+    var mensaje = '¡Hola, Ani! Ya hice mi pago para De la Idea a la Realidad.\n\n' +
       'Boleto: ' + boletoSel.nombre + ' (' + boletoSel.precio + ')\n' +
       'Monto pagado: ' + monto + '\n' +
       'Método: ' + (m ? m.nombre : '') + '\n\n' +
